@@ -68,8 +68,12 @@ public class PetController {
     public Mono<Void> addPet(
         @Body @NotNull @Valid Pet _body
     ) {
-        // TODO implement addPet();
-        return Mono.error(new HttpStatusException(HttpStatus.NOT_IMPLEMENTED, null));
+        /*
+
+            Hello hello
+            Assume I am some code 
+
+        */
     }
 
 

@@ -38,7 +38,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   Pet.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("Pet")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2022-09-30T08:47:56.259290Z[Etc/UTC]")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen")
 @Introspected
 public class Pet {
     public static final String JSON_PROPERTY_ID = "id";

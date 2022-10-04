@@ -39,10 +39,19 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2022-09-30T08:47:56.259290Z[Etc/UTC]")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen")
 @Controller
 @Tag(name = "Pet", description = "The Pet API")
 public class PetController {
+
+    public static final Logger = LoggerFactory.getLogger(PetController.class);
+
+    private IFooController fooController;
+
+    public PetController(IFooController foo) {
+        this.fooController = foo;
+    }
+
     /**
      * Add a new pet to the store
      *
@@ -74,8 +83,16 @@ public class PetController {
             Assume I am some code 
 
         */
+
+        return Mono.Ok(fooController.addPet(_body));
+        
+        /* Some more */
     }
 
+
+    private String blah() {
+        return "blah";
+    }
 
     /**
      * Deletes a pet
@@ -105,8 +122,9 @@ public class PetController {
         @PathVariable(value="petId") @NotNull Long petId, 
         @Header(value="api_key") @Nullable String apiKey
     ) {
-        // TODO implement deletePet();
-        return Mono.error(new HttpStatusException(HttpStatus.NOT_IMPLEMENTED, null));
+        
+        return Mono.Ok(fooController.addPet(petId, apiKey));
+
     }
 
 
@@ -140,8 +158,7 @@ public class PetController {
     public Mono<List<Pet>> findPetsByStatus(
         @QueryValue(value="status") @NotNull List<String> status
     ) {
-        // TODO implement findPetsByStatus();
-        return Mono.error(new HttpStatusException(HttpStatus.NOT_IMPLEMENTED, null));
+       throw new NotImplementedException();
     }
 
 
@@ -175,8 +192,7 @@ public class PetController {
     public Mono<List<Pet>> findPetsByTags(
         @QueryValue(value="tags") @NotNull List<String> tags
     ) {
-        // TODO implement findPetsByTags();
-        return Mono.error(new HttpStatusException(HttpStatus.NOT_IMPLEMENTED, null));
+        blah();
     }
 
 

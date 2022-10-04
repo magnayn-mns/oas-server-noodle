@@ -30,7 +30,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   Tag.JSON_PROPERTY_NAME
 })
 @JsonTypeName("Tag")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2022-09-30T08:47:56.259290Z[Etc/UTC]")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen")
 @Introspected
 public class Tag {
     public static final String JSON_PROPERTY_ID = "id";

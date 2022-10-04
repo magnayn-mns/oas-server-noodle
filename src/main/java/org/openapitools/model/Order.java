@@ -35,7 +35,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
   Order.JSON_PROPERTY_COMPLETE
 })
 @JsonTypeName("Order")
-@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen", date="2022-09-30T08:47:56.259290Z[Etc/UTC]")
+@Generated(value="org.openapitools.codegen.languages.JavaMicronautServerCodegen")
 @Introspected
 public class Order {
     public static final String JSON_PROPERTY_ID = "id";

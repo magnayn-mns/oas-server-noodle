@@ -1,27 +1,19 @@
-# openapi-micronaut
+Merge with API-first
 
-This is a generated server based on [Micronaut](https://micronaut.io/) framework.
+You can do this with git itself if you're prepared to keep swagger changes entirely on a single branch, that
+then gets merged into mainline as a 3-way merge. I.E: Process would be
 
-## Configuration
-
-To run the whole application, use [Application.java](src/main/java/org/openapitools/Application.java) as main class.
-
-Read **[Micronaut Guide](https://docs.micronaut.io/latest/guide/#ideSetup)** for detailed description on IDE setup and Micronaut Framework features.
-
-All the properties can be changed in the [application.yml](src/main/resources/application.yml) file or when creating micronaut application as described in **[Micronaut Guide - Configuration Section](https://docs.micronaut.io/latest/guide/#config)**.
-
-## Controller Guides
-
-Description on how to create Apis is given inside individual api guides:
-
-* [PetController](docs/controllers/PetController.md)
-* [StoreController](docs/controllers/StoreController.md)
-* [UserController](docs/controllers/UserController.md)
-
-## Author
-
-apiteam@swagger.io
-apiteam@swagger.io
-apiteam@swagger.io
+- check out openapi branch
+- make swagger.yaml changes
+- run generate-server.sh
+- commit all changes
+- switch back to mainline, merge in (should get no conflicts in spite of implementation changing, because of common ancestor).
 
 
+
+Alternatively something like this works (Using opendiff here which is a mac application, but I'm sure vimdiff or similar would work):
+
+- Check out mainling
+- Make some change to swagger.yaml (e.g: add an attribute)
+- Run update-swagger.sh
+- Merge changes in opendiff (hide identical changes)
